@@ -28,9 +28,10 @@ window.addEventListener('DOMContentLoaded', () => {
       //Назад
       back.addEventListener("click", (e)=>{
             e.preventDefault();
-            document.querySelector("#tbody").innerHTML = ``;
-            getPost(`http://localhost:8888/posts=${1}`);
-            paginations(pag);
+            window.location.href = '/';
+//             document.querySelector("#tbody").innerHTML = ``;
+//             getPost(`http://localhost:8888/posts=${1}`);
+//             paginations(pag);
       });
 
 
@@ -74,7 +75,7 @@ window.addEventListener('DOMContentLoaded', () => {
             let post = await res.json();
             console.log(post);
             post.forEach((element,index) => {
-                  if(index != 0 ){
+                  if(index != 1 ){
                   document.querySelector("#tbody").innerHTML += `
                   <tr class="idTend" id="${element['COL 1']}">
                         <td>${element['COL 1']}</td>
